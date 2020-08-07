@@ -31,12 +31,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         int res = baseMapper.deleteById(id);
         return res;
     }
-    
+
+    @Override
     public IPage<User> selectPage(PageRequest pageRequest){
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         Page<User> page = new Page<>(pageNum,pageSize);
         IPage<User> userIPage = baseMapper.selectPage(page, null);
         return userIPage;
+    }
+
+    @Override
+    public String Async_CC(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("chengcheng");
+        return "chengcheng";
     }
 }

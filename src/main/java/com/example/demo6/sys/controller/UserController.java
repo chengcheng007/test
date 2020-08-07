@@ -1,15 +1,13 @@
 package com.example.demo6.sys.controller;
 
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.demo6.common.page.PageRequest;
 import com.example.demo6.common.result.CommonResult;
 import com.example.demo6.sys.entity.User;
 import com.example.demo6.sys.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * <p>
@@ -67,6 +65,12 @@ public class UserController {
             return CommonResult.success("删除成功");
         }
         return CommonResult.error("删除失败");
+    }
+
+    @GetMapping("/Async_CC")
+    @Async
+    public String Async_CC(){
+        return userService.Async_CC();
     }
 }
 

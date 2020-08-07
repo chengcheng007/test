@@ -20,4 +20,6 @@ public interface UserService extends IService<User> {
     public int deleteById(Serializable id);
 
     public IPage<User> selectPage(PageRequest pageRequest);
+
+    public String Async_CC();
 }
