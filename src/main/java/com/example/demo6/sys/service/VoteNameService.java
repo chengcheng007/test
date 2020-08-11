@@ -2,6 +2,7 @@ package com.example.demo6.sys.service;
 
 import com.example.demo6.sys.entity.VoteName;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.demo6.sys.entity.VoteRecordMemory;
 
 import java.util.List;
 import java.util.Map;
@@ -20,4 +21,6 @@ public interface VoteNameService extends IService<VoteName> {
     List<Map<String, Object>> selectMaps();
 
     public List<VoteName> selectByMap();
+
+    public List<VoteRecordMemory> selectByName(String name);
 }

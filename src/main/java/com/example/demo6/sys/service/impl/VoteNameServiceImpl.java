@@ -1,6 +1,7 @@
 package com.example.demo6.sys.service.impl;
 
 import com.example.demo6.sys.entity.VoteName;
+import com.example.demo6.sys.entity.VoteRecordMemory;
 import com.example.demo6.sys.mapper.VoteNameMapper;
 import com.example.demo6.sys.service.VoteNameService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -32,5 +33,10 @@ public class VoteNameServiceImpl extends ServiceImpl<VoteNameMapper, VoteName> i
     public List<VoteName> selectByMap(){
         List<VoteName> maps = baseMapper.selectByMap(null);
         return maps;
+    }
+
+    public List<VoteRecordMemory> selectByName(String name){
+        List<VoteRecordMemory> voteRecordMemories = baseMapper.selectByName(name);
+        return voteRecordMemories;
     }
 }

@@ -10,5 +10,8 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations:
+    - com/example/demo6/sys/mapper/xml/*.xml
+
 
 

@@ -15,4 +15,7 @@ import java.util.List;
  */
 public interface VoteRecordMemoryService extends IService<VoteRecordMemory> {
     public List<VoteRecordMemory> selectPage(Integer page, Integer size);
+
+    public List selectList();
+
 }

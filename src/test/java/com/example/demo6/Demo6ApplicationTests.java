@@ -41,6 +41,17 @@ class Demo6ApplicationTests {
         System.out.println(s);
     }
 
+    @Test
+    void test02(){
+        List list = voteRecordMemoryService.selectList();
+        System.out.println(list);
+    }
+
+    @Test
+    void test03(){
+        List<VoteRecordMemory> res = voteNameService.selectByName("一级管理员");
+        System.out.println(res);
+    }
 
     @Test
     void test01(){

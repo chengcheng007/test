@@ -3,6 +3,8 @@ package com.example.demo6.sys.mapper;
 import com.example.demo6.sys.entity.VoteRecordMemory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口

@@ -32,5 +32,11 @@ public class VoteRecordMemoryController {
         List<VoteRecordMemory> voteRecordMemories = voteRecordMemoryService.selectPage(page, size);
         return CommonResult.success(voteRecordMemories);
     }
+
+    @GetMapping("/geMemory")
+    public CommonResult<List> geMemory(){
+        List list = voteRecordMemoryService.selectList();
+        return CommonResult.success(list);
+    }
 }
 

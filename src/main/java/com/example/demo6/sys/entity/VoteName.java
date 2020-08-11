@@ -1,11 +1,9 @@
 package com.example.demo6.sys.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.Version;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -30,6 +28,8 @@ public class VoteName implements Serializable {
     private Integer id;
 
     private String name;
+
+    private String nameTrue;
 
 
 }

@@ -41,6 +41,9 @@ public class VoteRecordMemory implements Serializable {
     @TableField(exist = false)
     private String groupName;
 
+    @TableField(exist = false)
+    private String groupNameTrue;
+
     private Integer status;
 
     private Date createTime;
