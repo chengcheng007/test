@@ -69,5 +69,11 @@ public class VoteRecordMemoryServiceImpl extends ServiceImpl<VoteRecordMemoryMap
         return list;
     }
 
+    public List<VoteRecordMemoryMapper> CreateMemoryID(){
+        baseMapper.CreateMemoryID();
+        baseMapper.InsertMemoryID();
+        List<VoteRecordMemoryMapper> voteRecordMemoryMappers = baseMapper.SelectRelationMemory();
+        return voteRecordMemoryMappers;
+    }
 
 }

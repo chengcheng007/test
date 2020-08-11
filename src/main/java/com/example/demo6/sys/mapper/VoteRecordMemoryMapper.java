@@ -15,4 +15,12 @@ import java.util.List;
  */
 public interface VoteRecordMemoryMapper extends BaseMapper<VoteRecordMemory> {
 
+    void  CreateMemoryID();
+
+    void  InsertMemoryID();
+
+    List<VoteRecordMemoryMapper> SelectMemoryID();
+
+    List<VoteRecordMemoryMapper> SelectRelationMemory();
+
 }

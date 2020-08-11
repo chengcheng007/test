@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo6.sys.mapper.VoteRecordMemoryMapper">
+    <update  id="CreateMemoryID">
+        create temporary  TABLE tmp_table (
+            id int not null
+        )
+    </update>
+
+    <insert id="InsertMemoryID" >
+        insert into tmp_table (select id from vote_record_memory where id between 1 and 1000)
+    </insert>
+
+    <select id="SelectMemoryID" resultType="com.example.demo6.sys.entity.VoteRecordMemory">
+        SELECT * FROM tmp_table
+    </select>
+    
+    <select id="SelectRelationMemory" resultType="com.example.demo6.sys.entity.VoteRecordMemory">
+        SELECT v.id,v.group_id,v.vote_num,v.status,v.create_time FROM vote_record_memory v INNER JOIN tmp_table t ON v.id=t.id
+    </select>
 
 </mapper>

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.demo6.sys.entity.User;
 import com.example.demo6.sys.entity.VoteRecordMemory;
 import com.example.demo6.sys.mapper.UserMapper;
+import com.example.demo6.sys.mapper.VoteRecordMemoryMapper;
 import com.example.demo6.sys.service.UserService;
 import com.example.demo6.sys.service.VoteNameService;
 import com.example.demo6.sys.service.VoteRecordMemoryService;
@@ -43,8 +44,10 @@ class Demo6ApplicationTests {
 
     @Test
     void test02(){
-        List list = voteRecordMemoryService.selectList();
-        System.out.println(list);
+//        List list = voteRecordMemoryService.selectList();
+//        System.out.println(list);
+        List<VoteRecordMemoryMapper> voteRecordMemoryMappers = voteRecordMemoryService.CreateMemoryID();
+        System.out.println(voteRecordMemoryMappers);
     }
 
     @Test
@@ -90,8 +93,10 @@ class Demo6ApplicationTests {
 
     @Test
     void test4(){
-        int i = userService.deleteById(1290211165164855298L);
-        System.out.println(i);
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.between("id",1,200);
+        List list = userService.list(queryWrapper);
+        System.out.println(list);
     }
 
     @Test
